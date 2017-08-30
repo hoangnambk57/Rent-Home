@@ -1,0 +1,16 @@
+.form-info form > input{
+  -webkit-transition: all 0.30s ease-in-out;
+  -moz-transition: all 0.30s ease-in-out;
+  -ms-transition: all 0.30s ease-in-out;
+  -o-transition: all 0.30s ease-in-out;
+  outline: none;
+  border: 1px solid #DDDDDD;
+}
+.form-info form > input:focus {box-shadow: 0 0 5px rgba(81, 203, 238, 1);border: 1px solid rgba(81, 203, 238, 1);}
+.alert{font-family:-webkit-body; }
+.acount_manager{position: relative;}
+.acount_menu{transition: all 1s;width: 0px;height: 0px;box-sizing: border-box;opacity: 0px;overflow: hidden;position: absolute;text-align: right;background-color: #28ca8a;z-index: 100;right: 0px;}
+.acount_manager:hover .acount_menu{
+   width: 160px;
+   height: 100px;
+}

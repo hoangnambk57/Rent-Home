@@ -11,6 +11,30 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('admin/login','UserController@getloginAdmin');
+Route::post('admin/login','UserController@postloginAdmin');
+Route::get('admin/logout','UserController@getlogoutAdmin');
+
+
+Route::group(['prefix'=>'admin','middleware'=>'adminLogin'],function()
+{
+  # code...
+  Route::group(['prefix'=>'user'],function(){
+    Route::get('list_user','UserController@getListUser');
+    // add user
+    Route::get('add_user','UserController@getAddUser');
+    Route::post('add_user','UserController@postAddUser');
+    // edit user
+    Route::get('edit_user/{id}','UserController@getEditUser');
+    Route::post('edit_user/{id}','UserController@postEditUser');
+    //
+    Route::get('delete/{id}','UserController@getDelete');
+  });
 });
+Route::get('home',function(){
+    return view('front_end.home.home');
+});
+//
+// Route front-end
+Route::get('login','UserController@getLogin');
+Route::post('login','UserController@postLogin');
